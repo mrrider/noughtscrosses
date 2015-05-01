@@ -1,0 +1,47 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false"
+    tools:context=".MainActivity"
+    android:background="@drawable/background"
+    android:weightSum="1">
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:id="@+id/singInMain"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:minWidth="150dp"
+        android:onClick="singInClick"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+        android:maxWidth="200dp"
+        android:maxHeight="60dp"
+        android:minHeight="50dp"
+        android:background="@drawable/singin"
+        android:layout_weight="0.09" />
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="160dp"
+        android:id="@+id/singUpMain"
+        android:minWidth="150dp"
+        android:textStyle="bold"
+        android:layout_below="@+id/space"
+        android:layout_alignStart="@+id/singInMain"
+        android:onClick="singUpClick"
+        android:layout_gravity="center_horizontal"
+        android:minHeight="50dp"
+        android:maxWidth="200dp"
+        android:maxHeight="60dp"
+        android:background="@drawable/singup"
+        />
+
+
+</LinearLayout>
