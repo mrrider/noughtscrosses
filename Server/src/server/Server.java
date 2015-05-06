@@ -4,10 +4,11 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.sql.SQLException;
+import java.util.HashMap;
 
 public class Server {
 		public static final int PORT = 9876;
-		
+		public static HashMap<String, Socket> sockets = new HashMap<String, Socket>();
 		
 		public static void main(String[] args) throws IOException, ClassNotFoundException, SQLException{
 			ServerSocket s = new ServerSocket(PORT);
