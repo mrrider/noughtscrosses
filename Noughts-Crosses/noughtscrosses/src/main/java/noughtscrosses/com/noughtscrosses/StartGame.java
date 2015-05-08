@@ -70,6 +70,10 @@ public class StartGame extends ActionBarActivity {
                             startActivity(intent);
                             done = true;
                         }
+                        if(op.equals("c")){
+                            done = true;
+                        }
+
                     }while(!done);
                 } catch (IOException e) {
                     // TODO Auto-generated catch block

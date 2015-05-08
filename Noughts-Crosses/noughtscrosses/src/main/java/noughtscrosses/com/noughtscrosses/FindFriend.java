@@ -40,6 +40,11 @@ public class FindFriend extends ActionBarActivity {
             t.join();
             if(!MainActivity.play) {
                 Toast.makeText(this, "User not found!", Toast.LENGTH_LONG).show();
+
+            }
+            else{
+                Intent intent = new Intent(this, Game.class);
+                startActivity(intent);
             }
         }
         else{
@@ -71,16 +76,15 @@ public class FindFriend extends ActionBarActivity {
                     os.flush();
                     Log.d("Server send " , "sfafsdasfdfadfsdgdsfgsfgfiodhafhdsjafhjkdhafjkhdjfajkdnajfnjansjknjsdnajfndjnjnfjdnjgnajdnnadsfjdnjknfskankanfdnugnfruguneunrnjdnagjnjkdnafjbndjnfandjfnjkdnjfndjnfjndsjknfjndjnfjsnjnfjknfgjksn");
                     BufferedReader brb = new BufferedReader(new InputStreamReader(MainActivity.in));
-                    String answer = "online";
+                    String answer = brb.readLine();
                     Log.d("Server answered - " , answer);
                     if(answer.equals("online")){
                         MainActivity.play = true;
-                        Intent intent = new Intent(FindFriend.this, Game.class);
-                        startActivity(intent);
+                        MainActivity.firstPlayer = true;
                     }
                     else{
                         MainActivity.play = false;
-                        Toast.makeText(FindFriend.this, "Incorrect login!", Toast.LENGTH_LONG).show();
+
                     }
 
                 }

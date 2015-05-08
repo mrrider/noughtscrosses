@@ -34,7 +34,6 @@
         android:minWidth="150dp"
         android:textStyle="bold"
         android:layout_below="@+id/space"
-        android:layout_alignStart="@+id/singInMain"
         android:onClick="singUpClick"
         android:layout_gravity="center_horizontal"
         android:minHeight="50dp"

@@ -107,6 +107,8 @@ public class OneServer extends Thread {
 					System.out.println("he is " + online);
 					if(online){
 						PrintWriter p = new PrintWriter(new BufferedWriter(new OutputStreamWriter(out)), true);
+						p.println("c");
+				        p.flush();
 						p.println("online");
 				        p.flush();
 						Socket s = Server.sockets.get(friendName);
@@ -115,29 +117,94 @@ public class OneServer extends Thread {
 						pw.println("play");
 						System.out.println("I will send to anoter cient");
 				        pw.flush();
-//						InputStream inF = s.getInputStream();
-//						ObjectInputStream ib = new ObjectInputStream(inF);
-//						boolean play = false;
-//						play = ib.readBoolean();
-//						if(play){
-//							objOut = new ObjectOutputStream(out);
-//							objOut.writeInt(1);
-//							objOut.flush();
-//						}
-//						else{
-//							objOut = new ObjectOutputStream(out);
-//							objOut.writeInt(-1);
-//							objOut.flush();
-//						}
+				        Server.plays.put(s, socket);
+				        Server.plays.put(socket, s);
+						Realisation.readDB();
+				        break;
 					}
-//					}else{
-//						objOut = new ObjectOutputStream(out);
-//						objOut.writeInt(0);
-//						objOut.flush();
-//					}
-					
+					else{
+						System.out.println("he is " + online);
+						PrintWriter p = new PrintWriter(new BufferedWriter(new OutputStreamWriter(out)), true);
+						p.println("c");
+				        p.flush();
+						p.println("ofline");
+				        p.flush();
+						Realisation.readDB();
+				        break;
+					}
+				case "game":
+					Socket s = Server.plays.get(socket);
+					OutputStream sOut = s.getOutputStream();
+					InputStream sIn = s.getInputStream();
+					System.out.println("yeah!!!1");
+					BufferedReader brb = new BufferedReader(new InputStreamReader(in));
+					String strop = brb.readLine();
+					System.out.println("strop = " + strop);
+					switch (strop) {
+						case "tl":
+							System.out.println("TL pressed");
+							PrintWriter p = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+							p.println("tl");
+					        p.flush();
+							break;
+							
+						case "tc":
+							System.out.println("TС pressed");
+							PrintWriter pс = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+							pс.println("tс");
+					        pс.flush();
+							break;
+//						case "tr":
+//							System.out.println("TR pressed");
+//							PrintWriter ptr = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+//							ptr.println("tr");
+//							ptr.flush();
+//							break;
+//							
+//						case "cl":
+//							System.out.println("CL pressed");
+//							PrintWriter cl = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+//							cl.println("cl");
+//					        cl.flush();
+//							break;
+//							
+//						case "cc":
+//							System.out.println("cc pressed");
+//							PrintWriter cc = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+//							cc.println("cc");
+//					        cc.flush();
+//							break;
+//						case "cr":
+//							System.out.println("cr pressed");
+//							PrintWriter cr = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+//							cr.println("cr");
+//							cr.flush();
+//							break;
+//
+//						case "bl":
+//							System.out.println("bl pressed");
+//							PrintWriter bl = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+//							bl.println("bl");
+//					        bl.flush();
+//							break;
+//							
+//						case "bc":
+//							System.out.println("bc pressed");
+//							PrintWriter bc = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+//							bc.println("bc");
+//							bc.flush();
+//							break;
+//						case "br":
+//							System.out.println("br pressed");
+//							PrintWriter br = new PrintWriter(new BufferedWriter(new OutputStreamWriter(sOut)), true);
+//							br.println("br");
+//							br.flush();
+//							break;
+
+						default:
+							break;
+					}
 					break;
-				
 				default:
 					break;
 				}

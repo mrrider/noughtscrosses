@@ -21,7 +21,9 @@
             android:layout_height="90dp"
             android:id="@+id/tl"
             android:layout_marginLeft="1dp"
-            android:background="@drawable/cross" />
+            android:background="@drawable/emp"
+            android:onClick="tlC"
+            android:nestedScrollingEnabled="false" />
 
         <ImageButton
             android:layout_width="90dp"
@@ -29,14 +31,15 @@
             android:id="@+id/tc"
             android:layout_marginLeft="30dp"
             android:background="@drawable/emp"
-            android:onClick="pr" />
+            android:onClick="tcC" />
 
         <ImageButton
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:id="@+id/tr"
             android:layout_marginLeft="30dp"
-            android:background="@drawable/emp" />
+            android:background="@drawable/emp"
+            android:onClick="trC" />
 
     </LinearLayout>
 
@@ -51,14 +54,15 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:id="@+id/cl"
-            android:background="@drawable/emp" />
+            android:background="@drawable/emp"
+            android:onClick="clC" />
 
         <ImageButton
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:id="@+id/cc"
             android:layout_marginLeft="30dp"
-            android:background="@drawable/cross" />
+            android:background="@drawable/emp" />
 
         <ImageButton
             android:layout_width="90dp"
@@ -79,21 +83,32 @@
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:id="@+id/bl"
-            android:background="@drawable/nough" />
+            android:background="@drawable/emp" />
 
         <ImageButton
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:id="@+id/bc"
-            android:background="@drawable/nough"
+            android:background="@drawable/emp"
             android:layout_marginLeft="30dp" />
 
         <ImageButton
             android:layout_width="90dp"
             android:layout_height="90dp"
             android:id="@+id/br"
-            android:background="@drawable/nough"
+            android:background="@drawable/emp"
             android:layout_marginLeft="35dp" />
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/turn"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="-435dp"
+        android:textSize="25dp"
+        android:textColor="#468966" />
 
 </LinearLayout>

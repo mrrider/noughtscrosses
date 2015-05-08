@@ -34,8 +34,9 @@ public class MainActivity extends ActionBarActivity {
     protected static final String SINGIN = "singin";
     protected static final String SINGOUT = "singout";
     protected static final String TRYCONNECT = "tryconnect";
+    protected static final String GAME = "game";
     protected static boolean play = false;
-
+    protected static boolean firstPlayer = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
